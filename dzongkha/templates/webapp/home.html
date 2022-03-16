@@ -1,0 +1,50 @@
+{% extends 'partials/base.html' %} {% block title %}Home Page {% endblock %}{% block content %}
+<form class="form-inline my-5 mx-auto">
+    <input class="form-control my-sm-5 link" name="q" type="search" placeholder="Search" aria-label="Search" style="width: 350px">
+    <button class="btn btn my-2 my-sm-0 dcik" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#123c61" class="bi bi-search" viewBox="0 0 16 16">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+      </svg></button>
+</form>
+{% for data in data %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+
+                            <div class="container mx-auto">
+
+                                <h5><b><i>Phelkay/ཕལ་སྐད། :</i></b> {{ data.phelkay }}</h5>
+                                <hr>
+
+                                <h5><b><i>Zhebsa/ཞེ་ས། :</i> </b>{{ data.zhebsa }}</h5>
+                                <hr>
+
+                                <h5><b><i>Phrases/རྗོད་ཚིག། :</i> </b>{{ data.phrases }}</h5>
+                                <hr>
+
+                                <h5><b><i>Audio/ཞེ་སའི་རྗོད་སྒྲ། : </i></b><audio controls automute>
+                            
+                                    <source src="{{data.audio.url}}" type="audio/mpeg">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-volume-up" viewBox="0 0 16 16">
+                                    <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+                                    <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+                                    <path d="M10.025 8a4.486 4.486 0 0 1-1.318 3.182L8 10.475A3.489 3.489 0 0 0 9.025 8c0-.966-.392-1.841-1.025-2.475l.707-.707A4.486 4.486 0 0 1 10.025 8zM7 4a.5.5 0 0 0-.812-.39L3.825 5.5H1.5A.5.5 0 0 0 1 6v4a.5.5 0 0 0 .5.5h2.325l2.363 1.89A.5.5 0 0 0 7 12V4zM4.312 6.39 6 5.04v5.92L4.312 9.61A.5.5 0 0 0 4 9.5H2v-3h2a.5.5 0 0 0 .312-.11z"/>
+                                </svg></h5>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %} 
+ {% endblock %}
